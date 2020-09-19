@@ -1,22 +1,20 @@
 #coding:utf-8
 import requests
 
-url = 'http://www.baidu.com'
+url = 'https://www.baidu.com'
+
+
+
 
 proxy = {
-    'http': 'http://101.231.104.82:80',
-    'https': 'https://101.231.104.82:80',
-    # 'https': 'https://1.192.246.63:9999',
-}
-proxy = {
-    'http': 'http://user:pwd@101.231.104.82:80',
-    'https': 'https://user:pwd@101.231.104.82:80',
-    # 'https': 'https://1.192.246.63:9999',
+    # 'http': 'http://167.71.213.9:3128',
+    # 'https': 'https://165.225.88.49:10605',
+    # 'https': 'https://177.131.22.186:80',
+    'http': 'http://60.191.11.251:3128',
 }
 
-
-response = requests.get(url, proxies=proxy)
-
+response = requests.get(url, proxies=proxy, timeout=2)
+print(response.status_code)
 
 
 
