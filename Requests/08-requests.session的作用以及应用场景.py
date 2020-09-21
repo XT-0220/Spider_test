@@ -1,10 +1,11 @@
 import re
-
 import requests
 
 def login():
+
     # url
     url =  'https://passport.csdn.net/v1/register/pc/login/doLogin'
+
     # session
     session = requests.session()
 
@@ -12,6 +13,7 @@ def login():
     session.headers = {
         'user - agent': 'Mozilla / 5.0(Windows NT 10.0;WOW64) AppleWebKit / 537.36(KHTML, likeGecko) Chrome / 85.0.4168.2Safari / 537.36'
     }
+
     # formdata
     fromdata = {
         'loginType': "1",
@@ -21,7 +23,7 @@ def login():
     }
 
     # 登录
-    session.post(url,data=fromdata)
+    session.post(url, data=fromdata)
 
     # 验证登录
     response = session.get('https://i.csdn.net/#/uc/profile')
